@@ -99,6 +99,7 @@ CheckFinish:
 
     ; Calculate the remaining time
     cmp eax, LEVEL_TIME
+    jae TimeExpired
     mov ecx, LEVEL_TIME
     sub ecx, eax
     mov eax, ecx
@@ -106,6 +107,12 @@ CheckFinish:
     mov ecx, 1000
     div ecx
     mov remainingTime, eax
+    jmp TimeUpdated
+
+TimeExpired:
+    mov remainingTime, 0
+
+TimeUpdated:
 
     ; Checks whether player lost or beat the game
     cmp finish, 1
