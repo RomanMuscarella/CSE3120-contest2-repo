@@ -20,6 +20,9 @@ restartMessage BYTE "Press R to restart or Q to quit",0
 ; Tracks time when the current level starts
 gameStartTime DWORD 0
 
+; Tracks time remaining in seconds
+remainingTime DWORD 120
+
 ; Variables we will use to keep track of the player
 xPos BYTE 0
 yPos BYTE 0
@@ -90,6 +93,19 @@ Game:
 
 CheckFinish:
 
+    ; Calculate time in ms
+    call GetMseconds
+    sub eax, gameStartTime
+
+    ; Calculate the remaining time
+    cmp eax, LEVEL_TIME
+    mov ecx, LEVEL_TIME
+    sub ecx, eax
+    mov eax, ecx
+    xor edx, edx
+    mov ecx, 1000
+    div ecx
+    mov remainingTime, eax
 
     ; Checks whether player lost or beat the game
     cmp finish, 1
