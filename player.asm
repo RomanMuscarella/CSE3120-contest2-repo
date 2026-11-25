@@ -40,7 +40,10 @@ GetMove PROC
 
 
 	; Reads a key (shocker)
-	call ReadChar
+	; ReadChar was changed to ReadKey because of the timer implementation
+	call ReadKey
+	jz Invalid
+
 	and AL, 0DFh
   
 
