@@ -10,6 +10,7 @@ bombX BYTE 0
 bombY BYTE 0
 activeBomb BYTE 0
 bombTurns BYTE 0
+bombDirectionCheck BYTE 0
 
 
 .code
@@ -45,7 +46,10 @@ GetMove PROC
 	jz Invalid
 
 	and AL, 0DFh
-  
+	
+	;Check if player is selecting a direction for the bomb
+	cmp BombDirectionCheck, 1
+	je Bomberman
 
 
 	; Check for upward movement, if key = 'W' then you go up
