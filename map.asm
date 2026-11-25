@@ -99,12 +99,12 @@ NextCell:
 
 	; Place the player in the upper-left corner of the map that is not an indestructible block
 	; There could be better code here to create a potential difficulty to this by making the number in map[] a variable position so that we could have different map sizes
-	mov BYTE PTR map[26], PLAYER
+	mov BYTE PTR map[MAP_WIDTH+1], PLAYER
 	
 	; Ensures that the starting area surrounding the player is set to empty
 	; The two lines below can also be changed by the potential update noted in line 96
-	mov BYTE PTR map[27], EMPTY
-	mov BYTE PTR map[51], EMPTY
+	mov BYTE PTR map[MAP_WIDTH+2], EMPTY
+	mov BYTE PTR map[(MAP_WIDTH*2)+1], EMPTY
 
 
 ;Randomly selects a valid pos for the special block
