@@ -11,6 +11,9 @@ PUBLIC finish
 ; Startup message
 startMessage BYTE "Press W to begin",0
 
+; Timer message
+timerMessage BYTE "Time: ", 0
+
 
 ; End game messages
 gameOverMessage BYTE "GAME OVER!", 0
@@ -113,6 +116,19 @@ TimeExpired:
     mov remainingTime, 0
 
 TimeUpdated:
+
+    ;Display remaining time
+    mov dh, 0
+    mov dl, 62
+    call GoToXY
+
+    mov edx, OFFSET timerMessage
+    call WriteString
+
+    mov eax, remainingTime
+    call WriteDec
+    mov al, ' '
+    call WriteChar
 
     ; Checks whether player lost or beat the game
     cmp finish, 1
