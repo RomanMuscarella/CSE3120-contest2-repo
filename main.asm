@@ -111,7 +111,7 @@ TimeUpdated:
 
     ;Display remaining time
     mov dh, 0
-    mov dl, 62
+    mov dl, 102
     call GoToXY
 
     mov edx, OFFSET timerMessage

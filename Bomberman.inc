@@ -6,8 +6,8 @@ LEVEL_TIME EQU 120000
 
 ;Board dimensions - will most likely change to a larger map size
 
-MAP_WIDTH EQU 15
-MAP_HEIGHT EQU 13
+MAP_WIDTH EQU 25
+MAP_HEIGHT EQU 23
 
 ; Characters translating to tiles
 WALL EQU '#'
