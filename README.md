@@ -2,16 +2,16 @@
 # Contest 2 Version
 ## Project Overview
 
-This project is a Bomberman-inspired game developed using **x86 Assembly (MASM)** and the **Irvine32 library**. The game runs in the Windows console (on Visual Studio)
+This project is a Bomberman-inspired game developed using **x86 Assembly (MASM)** and the **Irvine32 library**. The game runs in Visual Studio
 
 
 ## Controls
 
 | Key | Action |
 |---|---|
-| W / Up Arrow | Move up |
+| W / Up Arrow | Move up | 
 | A / Left Arrow | Move left |
-| S / Down Arrow | Move down |
+| S / Down Arrow | Move down |   
 | D / Right Arrow | Move right |
 | E | Place a bomb |
 | W / A / S / D or Arrow Keys | Select bomb placement direction |
