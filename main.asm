@@ -73,6 +73,10 @@ Begin:
     ; Displays the randomly generated map
     call DisplayMap
 
+    ; Record starting time of the level
+    call GetMseconds
+    mov gameStartTime, eax
+
 Game:
 
     ; Reads the player input
