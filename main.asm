@@ -54,15 +54,6 @@ StartGame:
     ; Reset any rogue bombs
     call ResetBombState
 
-
-    ; Clrscr and generate new map
-    call Clrscr
-    call GenMap
-
-
-    call DisplayMap
-
-   
 ; Begin the game
 Begin:
     
