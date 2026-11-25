@@ -1,5 +1,9 @@
 .386
 
+; Time to complete each level (in ms)
+; Right now its set to 120 seconds, if you feel like that's too much or little we can change it as time goes on
+LEVEL_TIME EQU 120000
+
 ;Board dimensions - will most likely change to a larger map size
 
 MAP_WIDTH EQU 15
