@@ -114,6 +114,7 @@ CheckFinish:
 
 TimeExpired:
     mov remainingTime, 0
+    mov finish, 1
 
 TimeUpdated:
 
