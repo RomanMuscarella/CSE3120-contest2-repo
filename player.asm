@@ -23,7 +23,7 @@ PUBLIC ResetBombState
 
 ResetBombState PROC
 
-
+	mov bombDirectionCheck, 0
 	mov activeBomb, 0
 	mov bombTurns, 0
 	mov bombX, 0
@@ -79,7 +79,7 @@ GetMove PROC
 
 	; Checks if the player wants to enter bomb placing mode
 	cmp al, 'E'
-	je Bomberman
+	je StartBombPlacement
 
 
 	; If all else fails
@@ -414,9 +414,20 @@ Right:
 	ret
 
 
+StartBombPlacement:
+
+	;Only allow placement when no bomb is active
+	cmp activeBomb, 1
+	je Invalid
+
+	mov bombDirectionCheck, 1
+	mov al, 0
+	ret
+
 Bomberman:
 
-	; Handles bomb placement
+	; Reset direction selection
+	mov bombDirectionCheck, 0
 	call PlaceBomb
 	ret
 
@@ -441,12 +452,6 @@ PlaceBomb PROC
 	; Only allow 1 bomb at a time
 	cmp activeBomb, 1
 	je Dud
-
-	
-	; Reads the direction of the bomb placement
-	call ReadChar
-	and AL, 0DFh
-
 
 	; Start with the player's curr pos
 	movzx ebx, xPos
