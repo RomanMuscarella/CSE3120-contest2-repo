@@ -136,7 +136,13 @@ TimeUpdated:
 
 
 Victory:
-
+    
+    INVOKE Beep, 523, 150
+    INVOKE Beep, 659, 150
+    INVOKE Beep, 784, 150
+    INVOKE Beep, 1047, 300
+    INVOKE Beep, 784, 150
+    INVOKE Beep, 1047, 500
 
     call Clrscr
 

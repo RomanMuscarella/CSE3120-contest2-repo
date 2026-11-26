@@ -6,8 +6,8 @@ LEVEL_TIME EQU 120000
 
 ;Board dimensions - will most likely change to a larger map size
 
-MAP_WIDTH EQU 20
-MAP_HEIGHT EQU 20
+MAP_WIDTH EQU 10
+MAP_HEIGHT EQU 10
 
 ; Characters translating to tiles
 WALL EQU '#'
@@ -31,3 +31,4 @@ UpdateTile PROTO, tileIndex:DWORD, newTile:DWORD
 DrawSingleTile PROTO, tileX:DWORD, tileY:DWORD, tileChar:DWORD
 ProcessTurn PROTO
 ResetBombState PROTO
+Beep PROTO, dwFreq:DWORD, dwDuration:DWORD
