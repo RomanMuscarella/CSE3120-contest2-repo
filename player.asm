@@ -9,7 +9,7 @@ INCLUDE Bomberman.inc
 bombX BYTE 0
 bombY BYTE 0
 activeBomb BYTE 0
-bombTurns BYTE 0
+
 
 bombStartTime DWORD 0
 
@@ -31,7 +31,7 @@ ResetBombState PROC
 
 	mov bombDirectionCheck, 0
 	mov activeBomb, 0
-	mov bombTurns, 0
+	
 	mov bombX, 0
 	mov bombY, 0
 
@@ -588,7 +588,7 @@ CheckBomb:
 	call getMseconds
 	mov bombStartTime, eax
 
-	mov bombTurns, 2
+
 
 
 	; Returns a code of 2 to indicate the placement of a bomb
@@ -784,7 +784,6 @@ Explode PROC
 
 	; Resets bomb variables
 	mov activeBomb, 0
-	mov bombTurns, 0
 
 
 	ret
