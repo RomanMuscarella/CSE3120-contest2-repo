@@ -120,6 +120,7 @@ TimeExpired:
 
 TimeUpdated:
 
+ 
      ; Only display timer when the value changes
     mov eax, remainingTime
     cmp eax, remDisplayTime
@@ -151,6 +152,7 @@ TimeUpdated:
     mov al, ' '
     call WriteChar
 
+    
 TimerDisplayed:
 
     ; Checks whether player lost or beat the game

@@ -48,6 +48,9 @@ GetMove PROC
 
 	; Reads a key (shocker)
 	; ReadChar was changed to ReadKey because of the timer implementation
+	mov eax, 50
+	call Delay
+	
 	call ReadKey
 	jz Invalid
 	
