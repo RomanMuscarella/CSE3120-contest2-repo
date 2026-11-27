@@ -618,14 +618,10 @@ ProcessTurn PROC
 	cmp activeBomb, 1
 	jne TurnOver
 
-
-	dec bombTurns
-
-
-	cmp bombTurns, 0
-	jne TurnOver
-
-
+	call GetMseconds
+	sub eax, bombStartTime
+	cmp eax, 2000
+	jb TurnOver
 	call Explode
 
 
