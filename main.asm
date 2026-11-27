@@ -31,6 +31,9 @@ xPos BYTE 0
 yPos BYTE 0
 map BYTE (MAP_WIDTH * MAP_HEIGHT) DUP(?)
 
+; Keeps track of the Player's score
+score BYTE 0
+
 ; Indicates whether the game has ended
 finish BYTE 0
 

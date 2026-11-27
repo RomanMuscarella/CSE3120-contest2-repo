@@ -22,6 +22,7 @@ EXTERNDEF xPos : BYTE
 EXTERNDEF yPos : BYTE
 EXTERNDEF map : BYTE
 EXTERNDEF finish : BYTE
+EXTERNDEF score : BYTE
 
 ; Procedures used by multiple files
 GenMap PROTO
