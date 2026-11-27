@@ -14,6 +14,9 @@ startMessage BYTE "Press W to begin",0
 ; Timer message
 timerMessage BYTE "Time: ", 0
 
+; Score message
+scoreMessage BYTE "Score: ", 0
+
 
 ; End game messages
 gameOverMessage BYTE "GAME OVER!", 0
@@ -132,6 +135,17 @@ TimeUpdated:
     call WriteString
 
     mov eax, remainingTime
+    call WriteDec
+    mov al, ' '
+    call WriteChar
+
+    ; Displays the player's score
+    mov dl, 110
+    call GoToXY
+    mov edx, OFFSET scoreMessage
+    call WriteString
+
+    movzx eax, score
     call WriteDec
     mov al, ' '
     call WriteChar
