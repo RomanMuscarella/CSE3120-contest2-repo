@@ -436,7 +436,6 @@ TileDraw:
 
 	; Draws the first row of the tile
 	mov al, 219
-	mov al, 219
 	ecx, 4
 Drawt:
 	call WriteChar
