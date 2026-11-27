@@ -86,9 +86,11 @@ Game:
     cmp al, 1
     jne CheckFinish
 
-    call ProcessTurn
+  
 
 CheckFinish:
+
+     call ProcessTurn
 
     ; Calculate time in ms
     call GetMseconds

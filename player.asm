@@ -15,7 +15,7 @@ bombStartTime DWORD 0
 
 bombDirectionCheck BYTE 0
 
-bombOn BYTE "BOMB MODE: ON", 0
+bombOn BYTE "BOMB MODE: ON  ", 0
 bombOFF BYTE "BOMB MODE: OFF", 0
 
 
