@@ -10,6 +10,9 @@ bombX BYTE 0
 bombY BYTE 0
 activeBomb BYTE 0
 bombTurns BYTE 0
+
+bombStartTime DWORD 0
+
 bombDirectionCheck BYTE 0
 
 bombOn BYTE "BOMB MODE: ON", 0
@@ -579,7 +582,12 @@ CheckBomb:
 
 
 	; Activates the bomb and initializes the countdown
+	; Right now we're changing the program to make bombs blow up after 2 seconds rather than turns
 	mov activeBomb, 1
+
+	call getMseconds
+	mov bombStartTime, eax
+
 	mov bombTurns, 2
 
 
