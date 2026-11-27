@@ -26,6 +26,9 @@ gameStartTime DWORD 0
 ; Tracks time remaining in seconds
 remainingTime DWORD 120
 
+;This will make our displayed time run a whole lot smoother
+remDisplayTime DWORD 0FFFFFFFFh
+
 ; Variables we will use to keep track of the player
 xPos BYTE 0
 yPos BYTE 0
@@ -114,7 +117,13 @@ TimeExpired:
 
 TimeUpdated:
 
-    ;Display remaining time
+     ; Only display timer when the value changes
+    mov eax, remainingTime
+    cmp eax, remDisplayTime
+    je TimerDisplayed
+
+    mov remDisplayTime, eax
+
     mov dh, 0
     mov dl, 102
     call GoToXY
@@ -126,6 +135,8 @@ TimeUpdated:
     call WriteDec
     mov al, ' '
     call WriteChar
+
+TimerDisplayed:
 
     ; Checks whether player lost or beat the game
     cmp finish, 1
