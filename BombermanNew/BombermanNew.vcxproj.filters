@@ -32,8 +32,5 @@
     <MASM Include="..\player.asm">
       <Filter>Source Files</Filter>
     </MASM>
-    <MASM Include="enemy.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
   </ItemGroup>
 </Project>

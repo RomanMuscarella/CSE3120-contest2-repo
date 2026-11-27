@@ -140,7 +140,8 @@ TimeUpdated:
     call WriteChar
 
     ; Displays the player's score
-    mov dl, 110
+    mov dh, 1
+    mov dl, 102 
     call GoToXY
     mov edx, OFFSET scoreMessage
     call WriteString
