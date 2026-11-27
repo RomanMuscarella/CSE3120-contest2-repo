@@ -696,6 +696,8 @@ DestroyBlock:
 	; Replaces destroyed block with an empty space
 	INVOKE UpdateTile, eax, EMPTY
 
+	; Upon destroying a block, the player receives 10 points
+	add score,10
 
 	; Updates block appearance on the screen
 	INVOKE DrawSingleTile, blastX, blastY, EMPTY
