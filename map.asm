@@ -436,10 +436,11 @@ TileDraw:
 
 	; Draws the first row of the tile
 	mov al, 219
+	mov al, 219
+	ecx, 4
+Drawt:
 	call WriteChar
-	call WriteChar
-	call WriteChar
-	call WriteChar
+	loop Drawt
 
 
 	; Moves down one console row
@@ -458,10 +459,10 @@ TileDraw:
 
 	; Draws the second row (because again we have thick tiles)
 	mov al, 219
+	ecx, 4
+Drawb:
 	call WriteChar
-	call WriteChar
-	call WriteChar
-	call WriteChar
+	loop Drawb
 
 
 	; Restores default console color
