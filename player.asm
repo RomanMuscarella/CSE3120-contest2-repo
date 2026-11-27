@@ -12,6 +12,9 @@ activeBomb BYTE 0
 bombTurns BYTE 0
 bombDirectionCheck BYTE 0
 
+bombOn BYTE "BOMB MODE: ON", 0
+bombOFF BYTE "BOMB MODE: OFF", 0
+
 
 .code
 
@@ -421,6 +424,12 @@ StartBombPlacement:
 	je Invalid
 
 	mov bombDirectionCheck, 1
+
+	mov dh, 0
+	mov dl, 82
+	call GoToXY
+	mov edx, OFFSET bombOn
+	call WriteString
 	mov al, 0
 	ret
 
@@ -428,6 +437,11 @@ Bomberman:
 
 	; Reset direction selection
 	mov bombDirectionCheck, 0
+	mov dh, 0
+	mov dl, 82
+	call GoToXY
+	mov edx, OFFSET bombOff
+	call WriteString
 	call PlaceBomb
 	ret
 
