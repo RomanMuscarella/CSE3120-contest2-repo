@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <MASM Include="enemy.asm" />
     <None Include="..\Bomberman.inc" />
     <MASM Include="..\map.asm">
       <FileType>Document</FileType>
