@@ -436,7 +436,7 @@ TileDraw:
 
 	; Draws the first row of the tile
 	mov al, 219
-	ecx, 4
+	mov ecx, 4
 Drawt:
 	call WriteChar
 	loop Drawt
@@ -458,7 +458,7 @@ Drawt:
 
 	; Draws the second row (because again we have thick tiles)
 	mov al, 219
-	ecx, 4
+	mov ecx, 4
 Drawb:
 	call WriteChar
 	loop Drawb
