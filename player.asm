@@ -695,15 +695,26 @@ RevealExit:
 
 DestroyBlock:
 
-	
-	; Replaces destroyed block with an empty space
+	; Generates a random number between 0 and 200 to determine if the destroyed block will drop a power-up
+	mov eax, 200
+	call RandomRange
+	; 0.5% chance of revealing a power up
+	cmp eax, 198
+	jg RevealPowerUp
+	; Otherwise, Replaces destroyed block with an empty space
 	INVOKE UpdateTile, eax, EMPTY
 
 	; Upon destroying a block, the player receives 10 points
-	; add score,10
+	add score,10
 
 	; Updates block appearance on the screen
 	INVOKE DrawSingleTile, blastX, blastY, EMPTY
+	jmp ExplodeDone
+
+	RevealPowerUp:
+	; INVOKE UpdateTile, eax, PowerUp
+	add score, 50
+	; INVOKE DrawSingleTile, blastX, blastY, PowerUp
 
 
 	jmp ExplodeDone
