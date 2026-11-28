@@ -359,6 +359,8 @@ DrawSingleTile PROC, tileX:DWORD, tileY:DWORD, tileChar:DWORD
 	cmp tileChar, 'B'
 	je TileBomb
 
+	cmp tileChar, POWER_UP
+	je TilePowerUp
 
 	cmp tileChar, SPECIAL_BLOCK
 	je TileSpecialBlock
@@ -391,6 +393,11 @@ TilePlayer:
 	mov eax, 0Ah
 	jmp TileDraw
 
+TilePowerUp:
+
+	; placeholder while figuring out colors
+    mov eax, 0Ah
+	jmp TileDraw
 
 TileBomb:
 
